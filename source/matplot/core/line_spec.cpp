@@ -413,11 +413,11 @@ namespace matplot {
         return marker_style();
     }
 
-    const std::string &line_spec::custom_marker() const {
+    const std::u8string &line_spec::custom_marker() const {
         return custom_marker_;
     }
 
-    void line_spec::custom_marker(std::string_view custom_marker) {
+    void line_spec::custom_marker(std::u8string_view custom_marker) {
         custom_marker_ = custom_marker;
         touch();
     }

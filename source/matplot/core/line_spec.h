@@ -119,8 +119,8 @@ namespace matplot {
         [[nodiscard]] enum marker_style marker() const;
         template <class T> void marker(T marker) { marker_style(marker); }
 
-        [[nodiscard]] const std::string &custom_marker() const;
-        void custom_marker(std::string_view custom_marker);
+        [[nodiscard]] const std::u8string &custom_marker() const;
+        void custom_marker(std::u8string_view custom_marker);
 
         [[nodiscard]] float marker_size() const;
         void marker_size(float marker_size);
@@ -169,7 +169,7 @@ namespace matplot {
         enum marker_style marker_style_ { marker_style::none };
         std::array<float, 4> marker_color_{0, 0, 0.447f, 0.741f};
         bool marker_user_color_{false};
-        std::string custom_marker_{""};
+        std::u8string custom_marker_{u8""};
         float marker_size_{6};
 
         // Marker face
