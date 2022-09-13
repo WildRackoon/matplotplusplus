@@ -242,8 +242,10 @@ namespace matplot {
     legend_handle legend(std::vector<axes_object_handle> objs,
                          const std::vector<std::string> &names);
 
+#ifdef _MSC_VER
     // Hackfix for a compiler bug in MSVC
     namespace {
+#endif
         template <typename... Args>
         legend_handle legend(axes_handle ax, std::string_view name,
                              Args const &... next_name) {
@@ -256,7 +258,9 @@ namespace matplot {
                              Args const &... next_name) {
             return legend(gca(), name, next_name...);
         }
+#ifdef _MSC_VER
     } // namespace
+#endif
 
     void colormap(axes_handle ax, const std::vector<std::vector<double>> &map);
     void colormap(const std::vector<std::vector<double>> &map);
